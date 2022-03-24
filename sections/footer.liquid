@@ -2,4 +2,9 @@
     <div class="footer__inner">
       <p class="copy">©️ 2022 Yakiniku-jambo Co., Ltd</p>
     </div>
+    <ul>
+      {% for link in linklists.footer.links %}
+      <li><a href="{{ link.url}}">{{ link.title }}</a></li>
+    </ul>
+    {% endfor %}
   </footer>
