@@ -1,0 +1,46 @@
+  <div class="subpage_bg_img d-flex justify-content-center align-items-center"
+  style="background-image: url('{% if collection.image %}{{collection.image | img_url: '1920x'}}{% else %}https://cdn.shopify.com/s/files/1/0624/9064/0598/files/leather-noimage.jpg?v=1642142741{% endif %}');">
+  <h2 class="f36">{{collection.title}}</h2>
+</div>
+{% render 'breadcrumbs' %}
+
+<div class="main">
+{% paginate collection.products by 6 %}
+
+  <div class="container">
+<ul class="categorys">
+<!-- collection.tags = ["Mens", "Womens", "Sale"] -->
+{% for tag in collection.tags %}
+<li>{{ tag | link_to_tag: tag }}</li>
+  
+{% endfor %}    
+</ul>
+    <div class="row row-cols-sm-3">
+      {% for product in collection.products %}
+      <a href="{{product.url | within: collection}}" class="col-sm mb-3 product_card">
+        <div class="card position-relative fadeInUpTrigger">
+          {% unless product.available %}<span class="f26 sold_out text-danger position-absolute">Sold
+            Out</span>{% endunless %}
+          <img class="item_list_img" src="{{product.featured_image.src | img_url: '1920x'}}" alt="">
+          <div class="card-body">
+            <p class="card-text font-weight-bold">{{product.title}}</p>
+            <p class="detail">
+              {{product.price | money}}
+              
+            </p>
+          </div>
+        </div>
+      </a>
+      {% else %}
+      <p>no matches</p>
+      {% endfor %}
+    </div>
+{% if paginate.pages > 1 %}
+  <nav aria-label="Page navigation example" class="pagination_nav">
+    {{ paginate | default_pagination: next: ">>", previous: "<<" }}
+  </nav>
+  {% endif %}
+  {% endpaginate %}
+
+  </div>
+</div>
