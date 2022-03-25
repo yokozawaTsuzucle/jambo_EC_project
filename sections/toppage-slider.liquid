@@ -1,0 +1,51 @@
+  <section class="slider">
+    
+    <ul class="slider-wrap">
+      <li class="slider-item01 slider-item" style="background-image: url('{{section.settings.toppage_slider_image01 | img_url: '3000px'}}')">
+        <div class="copy_area">
+        </div>
+      </li>
+      <li class="slider-item02 slider-item" style="background-image: url('{{section.settings.toppage_slider_image02 | img_url: '3000px'}}')">
+        <div class="copy_area">
+        </div>
+      </li>
+      <li class="slider-item03 slider-item" style="background-image: url('{{section.settings.toppage_slider_image03 | img_url: '3000px'}}')">
+        <div class="copy_area">
+        </div>
+      </li>
+      <li class="slider-item04 slider-item" style="background-image: url('{{section.settings.toppage_slider_image04 | img_url: '3000px'}}')">
+        <div class="copy_area">
+        </div>
+      </li>
+    </ul>
+
+  </section>
+
+
+{% schema %}
+ {
+    "name": "slider",
+    "settings": [
+    {
+      "id": "toppage_slider_image01",
+      "type": "image_picker",
+      "label": "slide img1"
+    },
+    {
+      "id": "toppage_slider_image02",
+      "type": "image_picker",
+      "label": "slide img2"
+    },
+    {
+      "id": "toppage_slider_image03",
+      "type": "image_picker",
+      "label": "slide img3"
+    },
+    {
+      "id": "toppage_slider_image04",
+      "type": "image_picker",
+      "label": "slide img4"
+    }
+    ]
+ }
+{% endschema %}
