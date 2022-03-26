@@ -1,6 +1,27 @@
 {
-  "current": "Default",
+  "current": {
+    "sections": {
+      "toppage-slider": {
+        "type": "toppage-slider",
+        "settings": {
+          "toppage_slider_image01": "shopify:\/\/shop_images\/IMG_0038a.jpg",
+          "toppage_slider_image02": "shopify:\/\/shop_images\/burgMD.jpg",
+          "toppage_slider_image03": "shopify:\/\/shop_images\/shabazouSquare.jpg",
+          "toppage_slider_image04": "shopify:\/\/shop_images\/IMG_0095a_edited.jpg"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
   "presets": {
-    "Default": { }
+    "Default": {
+    }
   }
 }
